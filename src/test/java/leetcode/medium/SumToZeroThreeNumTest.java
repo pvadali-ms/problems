@@ -11,7 +11,7 @@ public class SumToZeroThreeNumTest {
 
     @Test
     public void threeSumTest() {
-        SumToZeroThreeNum sumToZeroThreeNum = new SumToZeroThreeNum();
+        SumtoZeroThreeNum sumToZeroThreeNum = new SumtoZeroThreeNum();
         int[] nums = new int[]{-1, 0, 1, 2, -1, -4};
 
         List<List<Integer>> result = sumToZeroThreeNum.threeSum(nums);
