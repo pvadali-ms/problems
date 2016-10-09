@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by PV029500 on 10/7/2016.
  */
-public class SumToZeroThreeNum {
+public class SumtoZeroThreeNum {
 
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
