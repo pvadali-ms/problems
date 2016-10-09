@@ -12,8 +12,8 @@ public class KthLargestElementTest {
         int[] arr = new int[]{-1, -8, 9, 1, 2, 6, 4, 3, 0};
 
         KthLargestElement kthLargestElement = new KthLargestElement();
-        int k = 20;
-        System.out.println(kthLargestElement.findKthLargest(arr, k - 1));
+        int k = 9;
+        System.out.println(kthLargestElement.findKthLargest(arr, k));
 
     }
 
