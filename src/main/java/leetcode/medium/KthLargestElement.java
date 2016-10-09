@@ -2,8 +2,6 @@ package leetcode.medium;
 
 import java.util.Arrays;
 
-import static java.util.Arrays.*;
-
 /**
  * Created by PV029500 on 10/8/2016.
  */
@@ -37,7 +35,7 @@ public class KthLargestElement {
         int x = nums[end];
         int i = begin - 1;
         for (int j = begin; j <= end - 1; j++) {
-            if (nums[j] < x) {
+            if (nums[j] > x) {
                 i += 1;
                 swap(nums, i, j);
             }
@@ -47,7 +45,6 @@ public class KthLargestElement {
     }
 
     public int select(int[] arr, int[] nums) {
-
         if(arr.length == 1) {
             for (int i = 0; i < nums.length; i++) {
                 if (arr[0] == nums[i]) return i;
@@ -56,13 +53,13 @@ public class KthLargestElement {
         int[] temp = new int[arr.length / 5 + (arr.length % 5 == 0 ? 0 : 1)];
         int count = 0;
         for (int j = 0; j < arr.length/5; j++) {
-            sort(arr, count, count + 5);
+            Arrays.sort(arr, count, count + 5);
             count += 5;
             temp[j] = arr[(2 * count - 5) / 2];
         }
 
         if (arr.length % 5 != 0) {
-            sort(arr, count, arr.length);
+            Arrays.sort(arr, count, arr.length);
             temp[arr.length / 5] = arr[(count + arr.length - 1) / 2];
         }
 
@@ -77,11 +74,4 @@ public class KthLargestElement {
         }
     }
 
-    public int roundCeil(int a, int b) {
-        return (a / b) + (a % b == 0 ? 0 : 1);
-    }
-
-    public int roundFloor(int a, int b) {
-        return (a / b);
-    }
 }

@@ -32,6 +32,11 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
+        <dependency>
+            <groupId>com.cerner.edi.tools</groupId>
+            <artifactId>edi-default-message-util</artifactId>
+            <version>1.4.2</version>
+        </dependency>
     </dependencies>
 
 </project>
