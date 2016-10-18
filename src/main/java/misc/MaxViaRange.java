@@ -24,20 +24,21 @@ public class MaxViaRange {
                 if(s.ceiling(rangeLow) != null) {
                     lowVal += m.get(s.ceiling(rangeLow));
                     m.put(s.ceiling(rangeLow), lowVal);
-                    highVal += m.get(s.floor(rangeHigh));
-                    m.put(s.floor(rangeHigh), highVal);
+
                 }
                 s.add(rangeLow);
-                s.add(rangeHigh);
                 m.put(rangeLow, lowVal);
-                m.put(rangeHigh, highVal);
             }
 
             if (s.contains(rangeHigh)) {
                 m.put(rangeHigh, m.get(rangeHigh) + value);
             } else {
+                if (s.ceiling(rangeLow) != null && !s.ceiling(rangeLow).equals(rangeLow)) {
+                    highVal += m.get(s.floor(rangeHigh));
+                    m.put(s.floor(rangeHigh), highVal);
+                }
                 s.add(rangeHigh);
-                m.put(rangeHigh, value);
+                m.put(rangeHigh, highVal);
             }
         }
 
