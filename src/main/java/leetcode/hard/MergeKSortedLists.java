@@ -2,58 +2,92 @@ package leetcode.hard;
 
 import leetcode.utility.ListNode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * Created by PV029500 on 10/9/2016.
  */
 public class MergeKSortedLists {
 
-    public ListNode mergeKLists(ListNode[] lists1) {
-        List<ListNode> lists = new ArrayList<ListNode>(Arrays.asList(lists1));
-        int k = lists.size();
-        ListNode[] maxHeap = (ListNode[]) lists.toArray().clone();
+    public ListNode mergeKLists(ListNode[] lists) {
+
+        int k = lists.length;
+        ListNode[] minHeap = lists.clone();
+        ListNode head = new ListNode(0), dummy = head;
+
+        if (k <= 2) {
+            ListNode firstNode = lists[0];
+            ListNode secondNode = lists[1];
+
+            while (firstNode != null || secondNode != null) {
+                if (firstNode == null) {
+                    while (secondNode != null) {
+                        dummy.next = secondNode;
+                        secondNode = secondNode.next;
+                        dummy = dummy.next;
+                    }
+                } else if (secondNode == null) {
+                    while (firstNode != null) {
+                        dummy.next = firstNode;
+                        firstNode = firstNode.next;
+                        dummy = dummy.next;
+                    }
+                } else {
+                    if (firstNode.data > secondNode.data) {
+                        dummy.next = secondNode;
+                        dummy = dummy.next;
+                        secondNode = secondNode.next;
+                    } else {
+                        dummy.next = firstNode;
+                        dummy = dummy.next;
+                        firstNode = firstNode.next;
+                    }
+                }
+            }
+            return head.next;
+        }
+
         for(int i = k / 2; i >= 0; i--) {
-            maxHeapify(maxHeap, i);
+            minHeapify(minHeap, i);
         }
 
-        ListNode head = null, dummy = null;
 
-        while(lists.size() != 0) {
-            if(head == null) {
-                head = maxHeap[0];
-                dummy = maxHeap[0];
-            } else {
-                dummy.next = maxHeap[0];
-            }
-            if (maxHeap[0] == null) return null;
-            if (maxHeap[0].next == null) {
-                ListNode l = maxHeap[k];
-            } else {
-                maxHeap[0] = maxHeap[0].next;
-            }
-            maxHeapify(maxHeap, 0);
+        while(minHeap[0] != null) {
+
         }
 
-        return head;
+        return head.next;
     }
 
-    public void maxHeapify(ListNode[] listNodes, int i) {
-
-        int max;
-        if(listNodes[2 * i + 1] == null || listNodes[2 * i + 2] == null) {
-            max = listNodes[2 * i + 1] == null ? 2 * i + 2 : 2 * i + 1;
-        } else {
-            max = listNodes[2 * i + 1].data > listNodes[2 * i + 2].data ? 2 * i + 1 : 2 * i + 2;
+    public void minHeapify(ListNode[] listNodes, int i) {
+        ListNode first = listNodes[2 * i + 1];
+        ListNode second = listNodes[2 * i + 2];
+        ListNode min = listNodes[i];
+        if (first == null && second == null && min == null) return;
+        if (first == null && second == null) return;
+        if (min == null) {
+            if (first != null && second != null) {
+                if (first.data > second.data)
+                    swap(listNodes, i, 2 * i + 2);
+                else
+                    swap(listNodes, i, 2 * i + 1);
+            } else if (first == null) {
+                swap(listNodes, i, 2 * i + 2);
+            } else {
+                swap(listNodes, i, 2 * i + 1);
+            }
+            return;
         }
-
-        if (listNodes[i] == null) {
-            swap(listNodes, i, max);
-        } else if (listNodes[i].data < listNodes[max].data) {
-            swap(listNodes, i, max);
-            maxHeapify(listNodes, max);
+        if (first == null) {
+            if (min.data > second.data)
+                swap(listNodes, i, 2 * i + 2);
+        } else if (second == null) {
+            if (min.data > first.data)
+                swap(listNodes, i, 2 * i + 1);
+        } else {
+            if (min.data > first.data && first.data < second.data) {
+                swap(listNodes, i, 2 * i + 1);
+            } else if (min.data > second.data && second.data < first.data) {
+                swap(listNodes, i, 2 * i + 2);
+            }
         }
 
     }
