@@ -1,0 +1,28 @@
+package leetcode.easy;
+
+import java.util.Arrays;
+import java.util.Collections;
+
+/**
+ * Created by k on 10/19/16.
+ */
+public class RotateArray {
+    public void rotate(int[] nums, int k) {
+
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+    }
+
+    public void reverse(int[] nums, int start, int end) {
+        while(start < end) {
+            nums[start] = nums[start] ^ nums[end];
+            nums[end] = nums[start] ^ nums[end];
+            nums[start] = nums[start] ^ nums[end];
+            start++;
+            end--;
+        }
+    }
+}
+
