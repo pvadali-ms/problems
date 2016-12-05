@@ -14,7 +14,7 @@ public class AddNumbersInLinkedList {
             int sum, carry = 0, add;
             while (l1 != null || l2 != null) {
                 if (l1 != null && l2 != null) {
-                    add = l1.data + l2.data + carry;
+                    add = l1.val + l2.val + carry;
                     sum = add % 10;
                     carry = add / 10;
                     l1 = l1.next;
@@ -48,8 +48,8 @@ public class AddNumbersInLinkedList {
         public static ListNode runLoop(ListNode node, int carry, ListNode temp) {
             int sum;
             while(node != null) {
-                sum = (node.data + carry) % 10;
-                carry = (node.data + carry) / 10;
+                sum = (node.val + carry) % 10;
+                carry = (node.val + carry) / 10;
                 node = node.next;
                 temp = makeListNode(sum, temp);
             }
