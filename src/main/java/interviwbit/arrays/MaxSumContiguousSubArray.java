@@ -1,4 +1,4 @@
-package ibit.arrays;
+package interviwbit.arrays;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ibit.arrays;
+package interviwbit.arrays;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Test;
