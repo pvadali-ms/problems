@@ -26,6 +26,12 @@ public class SerializeTest implements Serializable {
         SerializeTest newObj = (SerializeTest)objectInputStream.readObject();
         System.out.println(newObj.hashCode());
         System.out.println(newObj.randomVal);
+
+        InterfaceClassTest interfaceClassTest = new InterfaceClassTest();
+        interfaceClassTest.setCustomVal(45);
+        InterfaceForClassTest interfaceForClassTest = interfaceClassTest;
+        InterfaceClassTest another = (InterfaceClassTest) interfaceForClassTest;
+        System.out.println(another.getCustomVal());
     }
 
     public static class InnerClass{
