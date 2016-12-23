@@ -8,21 +8,21 @@ public class HeapSort {
     int heapSize;
     public void heapSort(int[] nums) {
         heapSize = nums.length - 1;
-        buildMinHeap(nums, nums.length - 1);
+        buildMaxHeap(nums, nums.length - 1);
         for (int i = heapSize; i >= 0; i--) {
             swap(nums, 0, i);
             heapSize--;
-            minHeapify(nums, 0);
+            maxHeapify(nums, 0);
         }
     }
 
-    public void buildMinHeap(int[] nums, int n) {
+    public void buildMaxHeap(int[] nums, int n) {
         for (int i = n / 2; i >= 0; i--) {
-            minHeapify(nums, i);
+            maxHeapify(nums, i);
         }
     }
 
-    public void minHeapify(int[] nums, int i) {
+    public void maxHeapify(int[] nums, int i) {
         int child1 = 2 * i;
         int child2 = child1 + 1;
         int tmp = i;
@@ -30,7 +30,7 @@ public class HeapSort {
         if (child2 <= heapSize && nums[child2] > nums[i]) i = child2;
         if (tmp != i) {
             swap(nums, tmp, i);
-            minHeapify(nums, i);
+            maxHeapify(nums, i);
         }
     }
 
