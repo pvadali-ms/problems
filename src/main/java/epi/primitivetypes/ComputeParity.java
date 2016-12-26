@@ -31,7 +31,7 @@ package epi.primitivetypes;
  */
 public class ComputeParity {
 
-    public short computeParity(int num) {
+    public short computeParity(long num) {
         num ^= num >>> 32;
         num ^= num >>> 16;
         num ^= num >>> 8;
