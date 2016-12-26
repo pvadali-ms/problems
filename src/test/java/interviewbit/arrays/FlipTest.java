@@ -1,4 +1,4 @@
-package interviwbit.arrays;
+package interviewbit.arrays;
 
 import org.junit.Test;
 
