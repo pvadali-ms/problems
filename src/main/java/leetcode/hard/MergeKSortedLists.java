@@ -12,11 +12,9 @@ public class MergeKSortedLists {
         int k = lists.length;
         ListNode[] minHeap = lists.clone();
         ListNode head = new ListNode(0), dummy = head;
-
         if (k <= 2) {
             ListNode firstNode = lists[0];
             ListNode secondNode = lists[1];
-
             while (firstNode != null || secondNode != null) {
                 if (firstNode == null) {
                     while (secondNode != null) {
@@ -31,7 +29,7 @@ public class MergeKSortedLists {
                         dummy = dummy.next;
                     }
                 } else {
-                    if (firstNode.data > secondNode.data) {
+                    if (firstNode.val > secondNode.val) {
                         dummy.next = secondNode;
                         dummy = dummy.next;
                         secondNode = secondNode.next;
@@ -65,7 +63,7 @@ public class MergeKSortedLists {
         if (first == null && second == null) return;
         if (min == null) {
             if (first != null && second != null) {
-                if (first.data > second.data)
+                if (first.val > second.val)
                     swap(listNodes, i, 2 * i + 2);
                 else
                     swap(listNodes, i, 2 * i + 1);
@@ -77,15 +75,15 @@ public class MergeKSortedLists {
             return;
         }
         if (first == null) {
-            if (min.data > second.data)
+            if (min.val > second.val)
                 swap(listNodes, i, 2 * i + 2);
         } else if (second == null) {
-            if (min.data > first.data)
+            if (min.val > first.val)
                 swap(listNodes, i, 2 * i + 1);
         } else {
-            if (min.data > first.data && first.data < second.data) {
+            if (min.val > first.val && first.val < second.val) {
                 swap(listNodes, i, 2 * i + 1);
-            } else if (min.data > second.data && second.data < first.data) {
+            } else if (min.val > second.val && second.val < first.val) {
                 swap(listNodes, i, 2 * i + 2);
             }
         }

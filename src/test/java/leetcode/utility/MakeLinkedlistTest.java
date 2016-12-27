@@ -12,7 +12,7 @@ public class MakeLinkedlistTest {
         LinkedListUtility makeLinkedList = new LinkedListUtility();
         ListNode node = makeLinkedList.makeList(9, 6);
         while (node != null) {
-            System.out.println(node.data);
+            System.out.println(node.val);
             node = node.next;
         }
     }

@@ -13,9 +13,9 @@ public class MergeKSortedListsTest {
         ListNode[] src = new ListNode[]{new ListNode(3)};
 
         ListNode[] target = src;
-        src[0].data = 24;
+        src[0].val = 24;
 
-        System.out.println(target[0].data);
+        System.out.println(target[0].val);
     }
 
 }
