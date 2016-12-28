@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 /**
  * Created by PV029500 on 11/26/2016.
- * Your aim is to perform ATMOST one operation such that in final string number of 1s is maximised. If you don’t want to perform the operation, return an empty array. Else, return an array consisting of two elements denoting L and R. If there are multiple solutions, return the lexicographically smallest pair of L and R.
+ * Your aim is to perform ATMOST one operation such that in final string number of 1s is maximised. If you don’t want to perform the operation,
+ * return an empty array.
+ * Else, return an array consisting of two elements denoting L and R. If there are multiple solutions, return the lexicographically smallest pair of L and R.
 
  Notes:
  - Pair (a, b) is lexicographically smaller than pair (c, d) if a < c or, if a == c and b < d.

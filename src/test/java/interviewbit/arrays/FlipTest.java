@@ -11,5 +11,9 @@ public class FlipTest {
     public void flip() {
         Flip flip = new Flip();
         flip.flip("1101010001");
+        //below code throws
+//        List<Integer> temp = new ArrayList<Integer>();
+//        temp.set(3, 3);
+//        System.out.println(temp.size());
     }
 }
