@@ -36,7 +36,7 @@ public class ClosestIntegerWithSameWeights {
     }
 
     public int closestIntegerConstantTime(int num) {
-        int lowestBitSet = num & (~(num - 1));
+        int lowestBitSet = num & ~(num - 1);
         int lowestBitNotSet = ~num & (num + 1);
 
         if (lowestBitNotSet > lowestBitSet) {
