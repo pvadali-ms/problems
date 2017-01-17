@@ -14,6 +14,18 @@ package epi.primitivetypes;
  * Then flip a coin twice and record the result. If the result that wasn't chosen happens,
  * flip the coin two more times. Repeat until you get a match.
     This hypothetically could take forever, but on average will take less than 3 flips of the coin.
+
+ Also, consider below problem:
+    Chance of picking one element out of four is 1/4
+    There are four such 1/4's
+    Suppose an element has been picked
+    We have there elements
+    Chance of picking up one out of the three is 1/3
+    But the three is not fixed since the first person can pick up any out of four.
+    So he leaves a 3/4 part or probability to pick the 1 from 3
+    hence probability of second person is 1/3 * 3/4 (as there are 3 1/4s still left)
+    Similarly for others.
+    All of their probabilities remain 1/4
  */
 public class GenerateUniformRandomNumbers {
 

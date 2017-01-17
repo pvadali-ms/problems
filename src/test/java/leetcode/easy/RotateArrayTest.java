@@ -2,12 +2,8 @@ package leetcode.easy;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by k on 10/20/16.
@@ -16,10 +12,9 @@ public class RotateArrayTest {
 
     @Test
     public void rotateArray() {
-
         RotateArray rotateArray = new RotateArray();
-
     }
+
     Map<Class<?>, Object> m = new HashMap<Class<?>, Object>();
 
     public <T> void putGeneric(Class<T> type, T instance) {
@@ -31,6 +26,7 @@ public class RotateArrayTest {
         RotateArrayTest rotateArrayTest = new RotateArrayTest();
         rotateArrayTest.putGeneric(String.class, s);
     }
+
     public <T> T getGeneric(Class<T> type) {
         return type.cast(m.get(type));
     }
