@@ -93,13 +93,13 @@ public class SampleTraversal {
 
     public void dfs(nAryTree curr) {
         if (!visitedSet.contains(curr))
-            resultList.add("{name: '" + curr.data + "', "  + (curr.children.size() > 0 ? "msGroup: true}" : "selected: false}"));
+            resultList.add("{\"name\": \"" + curr.data + "\", "  + (curr.children.size() > 0 ? "\"msGroup\": \"true\"}" : "\"selected\": \"false\"}"));
         visitedSet.add(curr);
         for(nAryTree child : curr.children) {
             dfs(child);
         }
         if (curr.children.size() > 0)
-            resultList.add("{msGroup: false}");
+            resultList.add("{\"msGroup\": \"false\"}");
     }
 
     public class nAryTree {

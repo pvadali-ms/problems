@@ -20,6 +20,7 @@ public class NextPermutation {
         if (i != 0) {
             int newIndex = findNextLargest(arr, i, arr[i]);
             SwapNumbersArray.swap(arr, newIndex, i);
+            reverseArray(arr, i + 1, arr.length - 1);
         }
         return res;
     }
