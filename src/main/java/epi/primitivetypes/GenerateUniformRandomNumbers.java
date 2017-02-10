@@ -36,8 +36,8 @@ public class GenerateUniformRandomNumbers {
             for (int i = 0; (1 << i) < numOfOutcomes; i++) {
                 result = (result << 1) | 1; //use the random 0/1 generator here
             }
-        }while (result > numOfOutcomes);
-        return result;
+        } while (result >= numOfOutcomes);
+        return result + low;
     }
     /**
      * Time complexity for the above problem:
