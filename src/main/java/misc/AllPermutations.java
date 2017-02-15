@@ -13,6 +13,7 @@ public class AllPermutations {
     public static void main(String args[]) {
 
         String s = "abc";
+//        recurseWithArray(s.toCharArray(), 0);
         recurse("", s);
         recurseWithCaps("", s);
         for(String str : result)
@@ -34,6 +35,25 @@ public class AllPermutations {
         for (int i = 0; i < rest.length(); i++) {
             recurse(first + rest.charAt(i), rest.substring(0, i) + rest.substring(i + 1, rest.length()));
         }
+    }
+
+    public static void recurseWithArray(char[] rest, int start) {
+        if(start == rest.length) {
+            System.out.println(new String(rest));
+        } else {
+            for (int i = start; i < rest.length; i++) {
+                swap(rest, i, start);
+                recurseWithArray(rest, start + 1);
+                swap(rest, i, start);
+            }
+        }
+
+    }
+
+    public static void swap(char[] input, int i, int j) {
+        char temp = input[i];
+        input[i] = input[j];
+        input[j] = temp;
     }
 }
 
