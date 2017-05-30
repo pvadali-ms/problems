@@ -15,4 +15,10 @@ public class ApplyPermutationAgainstArrayTest {
         System.out.println(applyPermutationAgainstArray.applyPermutations(arr, permute));
     }
 
+    @Test
+    public void randomTest() {
+        for (int i = 0; i < 10; i++)
+            System.out.println(Math.random());
+    }
+
 }

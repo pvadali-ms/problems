@@ -37,6 +37,11 @@
             <artifactId>edi-default-message-util</artifactId>
             <version>1.4.2</version>
         </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.2</version>
+        </dependency>
     </dependencies>
 
 </project>
