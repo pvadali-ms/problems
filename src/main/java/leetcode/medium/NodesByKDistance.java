@@ -39,7 +39,7 @@ public class NodesByKDistance {
         if (curr == target) {
             return true;
         }
-        Map<TreeNode, String> m = new HashMap<TreeNode, String>();
+        Map<TreeNode, String> m = new HashMap<>();
         if (pathHasTarget(curr.right, target, queue)) {
             m.put(curr, "right");
             queue.offer(m);
