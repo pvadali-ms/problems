@@ -38,7 +38,7 @@ public class FlipMatrix {
                 if (anInput[j] == 1)
                     ones++;
             }
-            if (ones < input.length / 2) {
+            if (ones <= input.length / 2) {
                 for (int[] anInput : input) {
                     if (anInput[j] == 1)
                         anInput[j] = 0;
