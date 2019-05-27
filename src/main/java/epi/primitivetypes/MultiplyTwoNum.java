@@ -25,7 +25,7 @@ public class MultiplyTwoNum {
             bK = b & k;
             carryOut = (aK & bK) | (aK & carryIn) | (bK & carryIn);
             sum = sum | (aK ^ bK ^ carryIn);
-            carryIn = carryOut<<1;
+            carryIn = carryOut << 1;
             k <<= 1;
             tmpA >>>= 1;
             tmpB >>>= 1;

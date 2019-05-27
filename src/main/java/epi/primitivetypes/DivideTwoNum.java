@@ -10,7 +10,7 @@ public class DivideTwoNum {
         int power = 32;
         long yPower = y << power;
         while (x >= y) {
-            while(yPower > x) {
+            while (yPower > x) {
                 yPower >>>= 1;
                 power--;
             }

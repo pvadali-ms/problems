@@ -1,4 +1,4 @@
-package epi.primitivetypes;
+package main.java.epi.primitivetypes;
 
 /**
  * Created by PV029500 on 1/8/2017.

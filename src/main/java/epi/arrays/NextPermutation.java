@@ -1,4 +1,4 @@
-package epi.arrays;
+package main.java.epi.arrays;
 
 import leetcode.utility.SwapNumbersArray;
 

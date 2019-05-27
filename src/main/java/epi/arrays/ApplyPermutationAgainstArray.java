@@ -1,4 +1,4 @@
-package epi.arrays;
+package main.java.epi.arrays;
 
 /**
  * Created by PV029500 on 1/13/2017.

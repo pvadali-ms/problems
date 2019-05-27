@@ -8,7 +8,7 @@ package epi.primitivetypes;
  * this is same as compute parity
  * shift half of the bits and shift each even bit
  * O (log n) time where n is the number of bits
- *
+ * <p>
  * Method 2:
  * Other way is to precompute the reverse for chunks of four
  * and repeat the same as in compute parity
