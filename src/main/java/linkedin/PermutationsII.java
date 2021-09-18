@@ -7,14 +7,14 @@ import java.util.List;
 /**
  * Created by PV029500 on 11/26/2016.
  * Given a collection of numbers that might contain duplicates, return all possible unique permutations.
-
- For example,
- [1,1,2] have the following unique permutations:
- [
- [1,1,2],
- [1,2,1],
- [2,1,1]
- ]
+ * <p>
+ * For example,
+ * [1,1,2] have the following unique permutations:
+ * [
+ * [1,1,2],
+ * [1,2,1],
+ * [2,1,1]
+ * ]
  */
 public class PermutationsII {
 
@@ -30,7 +30,7 @@ public class PermutationsII {
             result.add(new ArrayList<Integer>(curr));
         }
         for (int i = 0; i < nums.length; i++) {
-            if(!(used[i] || i > 0 && nums[i] == nums[i-1] && !used[i - 1])) {
+            if (!(used[i] || i > 0 && nums[i] == nums[i - 1] && !used[i - 1])) {
                 used[i] = true;
                 curr.add(nums[i]);
                 permute(nums, result, curr, used);

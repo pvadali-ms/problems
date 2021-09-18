@@ -1,6 +1,8 @@
 package misc;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeSet;
 
 /**
  * Created by PV029500 on 10/17/2016.
@@ -12,7 +14,7 @@ public class MaxViaRange {
         Map<Integer, Integer> m = new HashMap<Integer, Integer>();
         TreeSet<Integer> s = new TreeSet<Integer>();
 
-        for(Map.Entry<Integer[], Integer> e : input.entrySet()) {
+        for (Map.Entry<Integer[], Integer> e : input.entrySet()) {
             Integer[] range = e.getKey();
             int rangeLow = range[0];
             int rangeHigh = range[1];
@@ -21,7 +23,7 @@ public class MaxViaRange {
             if (s.contains(rangeLow)) {
                 m.put(rangeLow, m.get(rangeLow) + value);
             } else {
-                if(s.ceiling(rangeLow) != null) {
+                if (s.ceiling(rangeLow) != null) {
                     lowVal += m.get(s.ceiling(rangeLow));
                     m.put(s.ceiling(rangeLow), lowVal);
 
@@ -43,7 +45,7 @@ public class MaxViaRange {
         }
 
         int max = 0;
-        for(int i : s) {
+        for (int i : s) {
             max = max > m.get(i) ? max : m.get(i);
         }
         return max;

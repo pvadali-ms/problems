@@ -43,12 +43,12 @@ public class MergeKSortedLists {
             return head.next;
         }
 
-        for(int i = k / 2; i >= 0; i--) {
+        for (int i = k / 2; i >= 0; i--) {
             minHeapify(minHeap, i);
         }
 
 
-        while(minHeap[0] != null) {
+        while (minHeap[0] != null) {
 
         }
 

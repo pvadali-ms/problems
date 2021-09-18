@@ -17,11 +17,11 @@ public class CombinationSumIII {
 
     public void recurse(int n, int k, List<Integer> currList, List<List<Integer>> result, int start) {
 
-        if(currList.size() == k && n == 0) {
+        if (currList.size() == k && n == 0) {
             result.add(new ArrayList<Integer>(currList));
             return;
         }
-        if(currList.size() == k || start > n) return;
+        if (currList.size() == k || start > n) return;
         for (int i = start; i < 10; i++) {
             currList.add(i);
             recurse(n - i, k, currList, result, start + 1);

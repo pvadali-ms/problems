@@ -7,6 +7,12 @@ import java.util.List;
  * Created by PV029500 on 10/25/2016.
  */
 public class FindDuplicatesPocketGems {
+    public static void swap(int[] nums, int i, int j) {
+        nums[i] = nums[i] ^ nums[j];
+        nums[j] = nums[i] ^ nums[j];
+        nums[i] = nums[i] ^ nums[j];
+    }
+
     public List<Integer> findDuplicates(int[] nums) {
         List<Integer> result = new ArrayList<Integer>();
         int i = 0;
@@ -30,11 +36,5 @@ public class FindDuplicatesPocketGems {
                 result.add(nums[j]);
         }
         return result;
-    }
-
-    public static void swap(int[] nums, int i, int j) {
-        nums[i] = nums[i] ^ nums[j];
-        nums[j] = nums[i] ^ nums[j];
-        nums[i] = nums[i] ^ nums[j];
     }
 }

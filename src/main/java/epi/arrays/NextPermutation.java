@@ -1,4 +1,4 @@
-package main.java.epi.arrays;
+package epi.arrays;
 
 import leetcode.utility.SwapNumbersArray;
 
@@ -11,11 +11,11 @@ import leetcode.utility.SwapNumbersArray;
  */
 public class NextPermutation {
 
-    public int[] nextPermutation (int arr[]) {
+    public int[] nextPermutation(int[] arr) {
         int breakPoint = 0;
         int i = arr.length - 1;
         int[] res = new int[]{};
-        for(; i > 0 && arr[i] < arr[i - 1]; i--);
+        for (; i > 0 && arr[i] < arr[i - 1]; i--) ;
 
         if (i != 0) {
             int newIndex = findNextLargest(arr, i, arr[i]);
@@ -25,7 +25,7 @@ public class NextPermutation {
         return res;
     }
 
-    public int findNextLargest(int arr[], int pos, int prev) {
+    public int findNextLargest(int[] arr, int pos, int prev) {
         int min = arr[pos + 1];
         int newIndex = 0;
         for (int i = pos; i < arr.length; i++) {
@@ -40,7 +40,7 @@ public class NextPermutation {
     }
 
     public void reverseArray(int[] arr, int begin, int end) {
-        for(int i = begin, j = end; i <= j; i++, j--) {
+        for (int i = begin, j = end; i <= j; i++, j--) {
             SwapNumbersArray.swap(arr, i, j);
         }
     }

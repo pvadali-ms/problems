@@ -18,35 +18,12 @@ public class TicTacToe {
         }
     }
 
-    public void addCharacter(char c, int row, int col) {
-        board[row][col] = c;
-    }
-
-    public void printBoard() {
-        for (int row = 0; row < dimension; row++) {
-            String delimiter = "";
-            for(int col = 0; col < dimension; col++) {
-                System.out.print(delimiter + board[row][col]);
-                delimiter = "|";
-            }
-            System.out.println("");
-        }
-    }
-
-    public boolean isBoardFull() {
-        for (int i = 0; i < dimension; i++)
-            for(int j = 0; j < dimension; j++)
-                if (board[i][j] == '-')
-                    return false;
-        return true;
-    }
-
     public static void main(String args[]) {
         TicTacToe ticTacToe = new TicTacToe();
         TicTacToeAI ai = new TicTacToeAI();
         Scanner scanner = new Scanner(System.in);
         boolean user = true;
-        for(int i = 0; i < dimension; i++) {
+        for (int i = 0; i < dimension; i++) {
             for (int j = 0; j < dimension; j++) {
                 if (user) {
                     int row = scanner.nextInt();
@@ -63,5 +40,28 @@ public class TicTacToe {
                 }
             }
         }
+    }
+
+    public void addCharacter(char c, int row, int col) {
+        board[row][col] = c;
+    }
+
+    public void printBoard() {
+        for (int row = 0; row < dimension; row++) {
+            String delimiter = "";
+            for (int col = 0; col < dimension; col++) {
+                System.out.print(delimiter + board[row][col]);
+                delimiter = "|";
+            }
+            System.out.println("");
+        }
+    }
+
+    public boolean isBoardFull() {
+        for (int i = 0; i < dimension; i++)
+            for (int j = 0; j < dimension; j++)
+                if (board[i][j] == '-')
+                    return false;
+        return true;
     }
 }

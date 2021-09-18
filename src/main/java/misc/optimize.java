@@ -20,8 +20,7 @@ public class optimize {
 
     /**
      * @param args the command line arguments
-     * @param list
-        ClassLoader classLoader = getClass().getClassLoader();
+     * @param list ClassLoader classLoader = getClass().getClassLoader();
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
@@ -148,8 +147,7 @@ public class optimize {
             return endTime;
         }
 
-        public double getDuration()
-        {
+        public double getDuration() {
             return endTime - startTime;
         }
 
@@ -168,19 +166,18 @@ public class optimize {
             return (lg.getStartTime() == startTime
                     && lg.getEndTime() == endTime);
         }
+
         @Override
         public int compare(Object t, Object t1) {
 
             int ret = 0;
             LifeGuard l = (LifeGuard) t;
             LifeGuard l1 = (LifeGuard) t1;
-            if (l.equals(l1))
-            {
+            if (l.equals(l1)) {
                 return ret;
             }
             ret = Double.compare(l.getStartTime(), l1.getStartTime());
-            if (0 == ret)
-            {
+            if (0 == ret) {
                 return Double.compare(l.getEndTime(), l1.getEndTime());
             }
 

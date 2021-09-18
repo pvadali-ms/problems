@@ -12,6 +12,14 @@ package epi.primitivetypes;
  * fill the array preComputedArray[] with parity for 0..65535
  * get each 16 bit subdivision by doing
  * preComputedParity[num >>> 3 * 16] ^ preComputedParity[num >>> 2 * 16] ^ preComputedParity[num >>> 2 * 16] ^ preComputedParity[num >>> 16]
+ * <p>
+ * Method 1:
+ * preCompute parity of 64 bits (if input is a long) in 4 sub divisions with 16 bits each.
+ * 2^16 = 65536
+ * Declare an array of size 65536
+ * fill the array preComputedArray[] with parity for 0..65535
+ * get each 16 bit subdivision by doing
+ * preComputedParity[num >>> 3 * 16] ^ preComputedParity[num >>> 2 * 16] ^ preComputedParity[num >>> 2 * 16] ^ preComputedParity[num >>> 16]
  */
 
 /**

@@ -13,11 +13,10 @@ public class DeleteNodeInBST {
         TreeNode target;
         while (temp != null && temp.val != key) {
             parent = temp;
-            if(temp.val > key) {
+            if (temp.val > key) {
                 left = true;
                 temp = temp.left;
-            }
-            else{
+            } else {
                 left = false;
                 temp = temp.right;
             }
@@ -44,11 +43,12 @@ public class DeleteNodeInBST {
             parent.right = target;
         return root;
     }
+
     public TreeNode getHighestOnLeftSubtree(TreeNode root) {
         TreeNode parent = root;
         TreeNode temp = root.left;
-        while(temp.right != null) {
-            parent= temp;
+        while (temp.right != null) {
+            parent = temp;
             temp = temp.right;
         }
         if (parent == root) {
@@ -58,11 +58,12 @@ public class DeleteNodeInBST {
         }
         return temp;
     }
+
     public TreeNode getLowestOnRightSubtree(TreeNode root) {
         TreeNode parent = root;
         TreeNode temp = root.right;
-        while(temp.left != null) {
-            parent= temp;
+        while (temp.left != null) {
+            parent = temp;
             temp = temp.left;
         }
         if (parent == root) {

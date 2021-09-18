@@ -1,8 +1,9 @@
 package misc;
 
 import java.util.Scanner;
+
 public class Solution {
-    public static void main(String args[] ) throws Exception {
+    public static void main(String args[]) throws Exception {
 
         Scanner scanner = new Scanner(System.in);
         int length = scanner.nextInt();
@@ -16,14 +17,14 @@ public class Solution {
             int value = scanner.nextInt();
             res[start] += value;
             Class in = Integer.class;
-            if(end < length - 1)
+            if (end < length - 1)
                 res[end + 1] -= value;
 
 
         }
 
         int sum = 0, max = 0;
-        for(int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {
             sum += res[i];
             res[i] = sum;
             max = max > sum ? max : sum;

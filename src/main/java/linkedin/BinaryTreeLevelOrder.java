@@ -15,17 +15,17 @@ public class BinaryTreeLevelOrder {
     public List<List<Integer>> levelOrder(TreeNode root) {
 
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        if(root == null) return  result;
+        if (root == null) return result;
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
         int size;
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             size = queue.size();
             List<Integer> curr = new ArrayList<Integer>();
             for (int i = 0; i < size; i++) {
-                if(queue.peek().left != null) queue.offer(queue.peek().left);
-                if(queue.peek().right != null) queue.offer(queue.peek().right);
+                if (queue.peek().left != null) queue.offer(queue.peek().left);
+                if (queue.peek().right != null) queue.offer(queue.peek().right);
                 curr.add(queue.poll().val);
             }
             result.add(curr);
@@ -36,7 +36,7 @@ public class BinaryTreeLevelOrder {
     //recursive
     public List<List<Integer>> levelOrderRecurse(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        if (root == null) return  result;
+        if (root == null) return result;
         return levelOrderRecurseHelper(root, result, new ArrayList<Integer>(), 0);
     }
 

@@ -1,4 +1,4 @@
-package main.java.epi.arrays;
+package epi.arrays;
 
 /**
  * Created by PV029500 on 1/9/2017.
@@ -11,10 +11,10 @@ public class DutchNationalFlag {
         for (int i = 0; i <= second; i++) {
             while (arr[i] == 2 && i < second)
                 //swap(arr[i], arr[second--]);
-            ;
+                ;
             while (arr[i] == 0 && i > zero)
                 //swap(arr[i], arr[zero++]);
-            ;
+                ;
         }
     }
 }

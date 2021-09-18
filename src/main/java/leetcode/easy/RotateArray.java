@@ -1,8 +1,5 @@
 package leetcode.easy;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 /**
  * Created by k on 10/19/16.
  */
@@ -16,7 +13,7 @@ public class RotateArray {
     }
 
     public void reverse(int[] nums, int start, int end) {
-        while(start < end) {
+        while (start < end) {
             nums[start] = nums[start] ^ nums[end];
             nums[end] = nums[start] ^ nums[end];
             nums[start] = nums[start] ^ nums[end];

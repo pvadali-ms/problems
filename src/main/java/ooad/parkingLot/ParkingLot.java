@@ -21,6 +21,17 @@ public class ParkingLot {
         }
     }
 
+    public static void main(String[] args) {
+        ParkingLot parkingLot = new ParkingLot();
+        Vehicle v = null;
+        while (v == null || parkingLot.isSpotAvailable()) {
+            v = new Vehicle((long) Math.random(), VehicleType.CAR, SlotType.REGULAR);
+            parkingLot.parkVehicle(v);
+            System.out.println("YES!");
+        }
+        System.out.println("parking lot filled");
+    }
+
     boolean parkVehicle(Vehicle vehicle) {
         Slot slot = getNextAvailableSlot(vehicle);
         vehicle.parkedSlot = slot;
@@ -30,7 +41,7 @@ public class ParkingLot {
     private Slot getNextAvailableSlot(Vehicle vehicle) {
         int numOfSlotsNeeded = vehicle.vehicleType.numOfSpots;
         int numOfSlotsAvailable = 0;
-        for(Slot slot : slots) {
+        for (Slot slot : slots) {
             if (slot.slotType.equals(vehicle.slotType) && slot.isVacant) {
                 numOfSlotsAvailable++;
                 slot.isVacant = false;
@@ -45,17 +56,6 @@ public class ParkingLot {
     void removeVehicle(Vehicle vehicle) {
         Slot slot = vehicle.parkedSlot;
         slot.isVacant = true;
-    }
-
-    public static void main(String[] args) {
-        ParkingLot parkingLot = new ParkingLot();
-        Vehicle v = null;
-        while (v == null || parkingLot.isSpotAvailable()) {
-            v = new Vehicle((long)Math.random(), VehicleType.CAR, SlotType.REGULAR);
-            parkingLot.parkVehicle(v);
-            System.out.println("YES!");
-        }
-        System.out.println("parking lot filled");
     }
 
     private boolean isSpotAvailable() {

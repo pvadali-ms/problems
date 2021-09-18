@@ -12,7 +12,7 @@ public class FlipMatrix {
             int partialSum = 0;
             int count = 0;
             for (int j = cols - 1; j >= 0; j--) {
-                partialSum += ((int)Math.pow(2, count++)) * input[i][j];
+                partialSum += ((int) Math.pow(2, count++)) * input[i][j];
             }
             sum += partialSum;
         }

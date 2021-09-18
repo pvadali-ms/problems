@@ -5,7 +5,7 @@ package leetcode.medium;
  */
 public class LongestPalindromicSubstring {
 
-    public class loopWithPointers{
+    public class loopWithPointers {
         public String longestPalindrome(String s) {
 
             if (s.length() == 1) return s;
@@ -20,7 +20,7 @@ public class LongestPalindromicSubstring {
             a[0] = begin;
             a[1] = end;
 
-            while(end >= 1) {
+            while (end >= 1) {
 
                 length = s.length() - end;
 
@@ -47,7 +47,7 @@ public class LongestPalindromicSubstring {
 
         public int[] checkPalindrome(int begin, int end, int length, String s, int a[]) {
 
-            while (length > 0 && begin >= 0 && end <= s.length() - 1 ) {
+            while (length > 0 && begin >= 0 && end <= s.length() - 1) {
                 if (s.charAt(begin) == s.charAt(end)) {
                     a[0] = begin;
                     a[1] = end;
@@ -70,11 +70,11 @@ public class LongestPalindromicSubstring {
             boolean arr[][] = new boolean[len][len];
 
             for (int i = 0; i < len; i++) {
-                    arr[i][i] = true;
+                arr[i][i] = true;
             }
 
             for (int i = 0; i < len - 1; i++) {
-                if(s.charAt(i) == s.charAt(i + 1)) {
+                if (s.charAt(i) == s.charAt(i + 1)) {
                     arr[i][i + 1] = true;
                     max = 2;
                     begin = i;
@@ -83,8 +83,8 @@ public class LongestPalindromicSubstring {
 
             for (int n = 3; n <= len; n++) {
                 int j = n - 1;
-                for(int i = 0; i <= len - n; i++) {
-                    if(s.charAt(i) == s.charAt(j) && arr[i + 1][j - 1]) {
+                for (int i = 0; i <= len - n; i++) {
+                    if (s.charAt(i) == s.charAt(j) && arr[i + 1][j - 1]) {
                         arr[i][j] = true;
                         max = j - i + 1;
                         begin = i;

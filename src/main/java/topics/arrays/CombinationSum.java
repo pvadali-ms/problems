@@ -35,11 +35,11 @@ public class CombinationSum {
     }
 
     public void combinationSumHelper(int[] nums, int target, List<Integer> resultSofar, int index, List<List<Integer>> result) {
-        if(target == 0) {
+        if (target == 0) {
             result.add(new ArrayList<Integer>(resultSofar));
             return;
         }
-        for(int i = index; i < nums.length && nums[i] <= target; i++) {
+        for (int i = index; i < nums.length && nums[i] <= target; i++) {
             resultSofar.add(nums[i]);
             combinationSumHelper(nums, target - nums[i], resultSofar, i, result);
             resultSofar.remove(resultSofar.size() - 1);

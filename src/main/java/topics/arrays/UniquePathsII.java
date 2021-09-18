@@ -18,11 +18,11 @@ public class UniquePathsII {
             else obstacleGrid[i][0] = 1;
 
         for (int i = 1; i < rows; i++)
-            for(int j = 1; j < columns; j++)
+            for (int j = 1; j < columns; j++)
                 if ((obstacleGrid[i - 1][j] == -1 && obstacleGrid[i][j - 1] == -1) || obstacleGrid[i][j] == 1)
                     obstacleGrid[i][j] = -1;
 
-        if(obstacleGrid[0][0] == 0) obstacleGrid[0][0] = 1;
+        if (obstacleGrid[0][0] == 0) obstacleGrid[0][0] = 1;
 
         for (int i = 1; i < rows; i++)
             for (int j = 1; j < columns; j++)

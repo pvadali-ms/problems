@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Solution {
 
-    public static void main(String args[] ) throws Exception {
+    public static void main(String args[]) throws Exception {
         Scanner sn = new Scanner(System.in);
         int size = sn.nextInt();
         int window = sn.nextInt();
@@ -30,7 +30,7 @@ public class Solution {
                         finalDec += (currentDec * (currentDec - 1)) / 2;
                         currentDec = 1;
                     }
-                } else if (arr[j] < arr[j - 1]){
+                } else if (arr[j] < arr[j - 1]) {
                     currentDec += 1;
                     if (currentInc != 1) {
                         finalInc += (currentInc * (currentInc - 1)) / 2;

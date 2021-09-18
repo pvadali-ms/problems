@@ -16,7 +16,7 @@ public class AllPermutations {
 //        recurseWithArray(s.toCharArray(), 0);
         recurse("", s);
         recurseWithCaps("", s);
-        for(String str : result)
+        for (String str : result)
             System.out.println(str);
     }
 
@@ -38,7 +38,7 @@ public class AllPermutations {
     }
 
     public static void recurseWithArray(char[] rest, int start) {
-        if(start == rest.length) {
+        if (start == rest.length) {
             System.out.println(new String(rest));
         } else {
             for (int i = start; i < rest.length; i++) {

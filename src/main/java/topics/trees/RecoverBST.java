@@ -28,10 +28,10 @@ public class RecoverBST {
             return;
         traverse(root.left);
 
-        if(firstElement == null && prevElement.val >= root.val)
+        if (firstElement == null && prevElement.val >= root.val)
             firstElement = prevElement;
 
-        if(firstElement != null && prevElement.val >= root.val)
+        if (firstElement != null && prevElement.val >= root.val)
             secondElement = root;
 
         prevElement = root;

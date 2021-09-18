@@ -8,7 +8,8 @@ import leetcode.utility.ListNode;
  */
 public class AddNumbersInLinkedList {
     static ListNode result = null;
-    public static class Solution{
+
+    public static class Solution {
         public static ListNode addNumbers(ListNode l1, ListNode l2) {
             ListNode temp = null;
             int sum, carry = 0, add;
@@ -35,7 +36,7 @@ public class AddNumbersInLinkedList {
         }
 
         public static ListNode makeListNode(int sum, ListNode temp) {
-            if(temp == null) {
+            if (temp == null) {
                 temp = new ListNode(sum);
                 result = temp;
             } else {
@@ -47,7 +48,7 @@ public class AddNumbersInLinkedList {
 
         public static ListNode runLoop(ListNode node, int carry, ListNode temp) {
             int sum;
-            while(node != null) {
+            while (node != null) {
                 sum = (node.val + carry) % 10;
                 carry = (node.val + carry) / 10;
                 node = node.next;

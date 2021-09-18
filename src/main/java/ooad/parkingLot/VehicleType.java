@@ -8,6 +8,7 @@ public enum VehicleType {
     MOTORCYCLE(1), MINIVAN(2), CAR(2);
 
     int numOfSpots;
+
     VehicleType(int numOfSpots) {
         this.numOfSpots = numOfSpots;
     }

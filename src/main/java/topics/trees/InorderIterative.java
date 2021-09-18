@@ -15,8 +15,8 @@ public class InorderIterative {
         List<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> s = new Stack<TreeNode>();
         TreeNode curr = root;
-        while(curr != null || !s.empty()) {
-            while(curr != null) {
+        while (curr != null || !s.empty()) {
+            while (curr != null) {
                 s.push(curr);
                 curr = curr.left;
             }

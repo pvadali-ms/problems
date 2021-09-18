@@ -15,7 +15,7 @@ public class MinStack {
     }
 
     public void push(int x) {
-        if(minStack.empty()) {
+        if (minStack.empty()) {
             min = x;
             minStack.push((long) 0);
         } else {
@@ -34,13 +34,13 @@ public class MinStack {
         long top = minStack.peek();
 
         if (top > 0) {
-            return (int)(top + min);
+            return (int) (top + min);
         } else {
             return (int) min;
         }
     }
 
     public int getMin() {
-        return (int)min;
+        return (int) min;
     }
 }

@@ -32,7 +32,7 @@ public class PlusOne {
             answer.add(1);
         }
 
-        while(i >= trueHead) {
+        while (i >= trueHead) {
             answer.add(a.get(i));
             i--;
         }

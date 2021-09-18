@@ -32,7 +32,7 @@ public class MaxSubArrayNoIndex {
             int[] rightResult = maxSubArr(nums, mid + 1, end);
             int leftMax = nums[mid], leftSum = nums[mid], leftIndex = mid;
 
-            for(int i = mid - 1; i >= begin; i--) {
+            for (int i = mid - 1; i >= begin; i--) {
                 leftSum = leftSum + nums[i];
                 if (leftSum > leftMax) {
                     leftIndex = i;

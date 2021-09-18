@@ -1,11 +1,6 @@
 package leetcode.medium;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by PV029500 on 7/25/2017.

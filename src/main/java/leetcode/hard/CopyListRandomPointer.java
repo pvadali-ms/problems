@@ -13,14 +13,14 @@ public class CopyListRandomPointer {
     public RandomListNode copyRandomList(RandomListNode head) {
         Map<RandomListNode, RandomListNode> m = new HashMap<RandomListNode, RandomListNode>();
         RandomListNode temp = head, nTemp;
-        while(temp != null) {
+        while (temp != null) {
             nTemp = new RandomListNode(temp.label);
             m.put(temp, nTemp);
             temp = temp.next;
         }
         temp = head;
 
-        while(temp != null) {
+        while (temp != null) {
             nTemp = m.get(temp);
             nTemp.next = m.get(temp.next);
             nTemp.random = m.get(temp.random);

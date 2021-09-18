@@ -6,9 +6,9 @@ package leetcode.medium;
 public class PartitionEqualSubset {
     public boolean canPartition(int[] nums) {
         int l = nums.length;
-        boolean[][]dp = new boolean[l][l];
+        boolean[][] dp = new boolean[l][l];
 
-        for(int i = 0; i < l; i++) {
+        for (int i = 0; i < l; i++) {
             for (int j = 0; j < i; j++) {
 
             }

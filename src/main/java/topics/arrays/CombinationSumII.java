@@ -16,11 +16,11 @@ public class CombinationSumII {
     }
 
     public void combinationSumHelper(int[] nums, int target, List<Integer> resultSofar, List<List<Integer>> result, int begin) {
-        if(target == 0) {
+        if (target == 0) {
             result.add(new ArrayList<Integer>(resultSofar));
             return;
         }
-        for(int i = begin; i < nums.length && nums[i] <= target; i++) {
+        for (int i = begin; i < nums.length && nums[i] <= target; i++) {
             if (i == begin || nums[i] != nums[i - 1]) {                         //this if condition is to guarantee unique results
                 resultSofar.add(nums[i]);
                 combinationSumHelper(nums, target - nums[i], resultSofar, result, i + 1);

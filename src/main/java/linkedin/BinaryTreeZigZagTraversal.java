@@ -40,24 +40,21 @@ public class BinaryTreeZigZagTraversal {
 
     //recursive
 
-    public List<List<Integer>> zigzagLevelOrderRecurse(TreeNode root)
-    {
+    public List<List<Integer>> zigzagLevelOrderRecurse(TreeNode root) {
         List<List<Integer>> sol = new ArrayList<List<Integer>>();
         travel(root, sol, 0);
         return sol;
     }
 
-    private void travel(TreeNode curr, List<List<Integer>> sol, int level)
-    {
-        if(curr == null) return;
+    private void travel(TreeNode curr, List<List<Integer>> sol, int level) {
+        if (curr == null) return;
 
-        if(sol.size() <= level)
-        {
+        if (sol.size() <= level) {
             sol.add(new LinkedList<Integer>());
         }
 
-        List<Integer> collection  = sol.get(level);
-        if(level % 2 == 0) collection.add(curr.val);
+        List<Integer> collection = sol.get(level);
+        if (level % 2 == 0) collection.add(curr.val);
         else collection.add(0, curr.val);
 
         travel(curr.left, sol, level + 1);

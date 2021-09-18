@@ -18,21 +18,11 @@ public class WordLadder_One {
         Queue<WordLevelPair> queue = new LinkedList<WordLevelPair>();
         queue.add(new WordLevelPair(beginWord, level));
         visitedSet.add(beginWord);
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             int result = dictionaryChecker(visitedSet, queue, wordList, endWord);
-            if(result != 0) return result;
+            if (result != 0) return result;
         }
         return 0;
-    }
-
-    public class WordLevelPair{
-        public String word;
-        public int level;
-
-        WordLevelPair(String word, int level) {
-            this.word = word;
-            this.level = level;
-        }
     }
 
     public int dictionaryChecker(Set<String> visitedSet, Queue<WordLevelPair> q, Set<String> wordList, String dest) {
@@ -40,10 +30,10 @@ public class WordLadder_One {
         WordLevelPair pair = q.poll();
         String src = pair.word;
         int level = pair.level;
-        for(String s : wordList) {
+        for (String s : wordList) {
             if (compatible(s, src) && !visitedSet.contains(s)) {
                 if (compatible(src, dest)) return level + 1;
-                if(compatible(s, dest)) {
+                if (compatible(s, dest)) {
                     return level + 2;
                 }
                 visitedSet.add(s);
@@ -63,5 +53,15 @@ public class WordLadder_One {
         }
 
         return diff == 1;
+    }
+
+    public class WordLevelPair {
+        public String word;
+        public int level;
+
+        WordLevelPair(String word, int level) {
+            this.word = word;
+            this.level = level;
+        }
     }
 }

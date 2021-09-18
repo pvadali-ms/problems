@@ -10,8 +10,8 @@ public class KthLargestElement {
     public int findKthLargest(int[] nums, int k) {
         int median;
         int begin = 0, end = nums.length - 1, result = -1;
-        while(result != k - 1 && begin <= end) {
-            int [] temp = new int[end - begin + 1];
+        while (result != k - 1 && begin <= end) {
+            int[] temp = new int[end - begin + 1];
             int var = begin, p = 0;
             while (var <= end) {
                 temp[p++] = nums[var++];
@@ -45,14 +45,14 @@ public class KthLargestElement {
     }
 
     public int select(int[] arr, int[] nums) {
-        if(arr.length == 1) {
+        if (arr.length == 1) {
             for (int i = 0; i < nums.length; i++) {
                 if (arr[0] == nums[i]) return i;
             }
         }
         int[] temp = new int[arr.length / 5 + (arr.length % 5 == 0 ? 0 : 1)];
         int count = 0;
-        for (int j = 0; j < arr.length/5; j++) {
+        for (int j = 0; j < arr.length / 5; j++) {
             Arrays.sort(arr, count, count + 5);
             count += 5;
             temp[j] = arr[(2 * count - 5) / 2];

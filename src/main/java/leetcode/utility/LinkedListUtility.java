@@ -26,7 +26,7 @@ public class LinkedListUtility {
     public static ListNode reverseList(ListNode node) {
         if (node == null)
             return null;
-        if(node.next == null)
+        if (node.next == null)
             return node;
         ListNode head = reverseList(node.next);
         node.next.next = node;
@@ -47,7 +47,7 @@ public class LinkedListUtility {
 
     public static int getSize(ListNode node) {
         int count = 0;
-        while(node != null) {
+        while (node != null) {
             node = node.next;
             count++;
         }
@@ -55,7 +55,7 @@ public class LinkedListUtility {
     }
 
     public static void printList(ListNode node) {
-        while(node != null) {
+        while (node != null) {
             System.out.print(node.val + " ");
             node = node.next;
         }

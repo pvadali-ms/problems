@@ -6,6 +6,7 @@ package sorting;
 public class HeapSort {
 
     int heapSize;
+
     public void heapSort(int[] nums) {
         heapSize = nums.length - 1;
         buildMaxHeap(nums, nums.length - 1);

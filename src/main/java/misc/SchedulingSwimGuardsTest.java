@@ -16,7 +16,7 @@ public class SchedulingSwimGuardsTest {
         ClassLoader classLoader = getClass().getClassLoader();
         String fileName = ".in";
 //        for (int i = 8; i < 9; i++)
-            calculate(classLoader, String.valueOf(5) + fileName);
+        calculate(classLoader, String.valueOf(5) + fileName);
 
     }
 

@@ -22,9 +22,9 @@ public class MergeSort {
             int[] right = Arrays.copyOfRange(nums, q + 1, r + 1);
             int k = p;
             for (int i = 0, j = 0; k < r - p + 1; k++) {
-                if(i < left.length && j < right.length && left[i] < right[j]) {
+                if (i < left.length && j < right.length && left[i] < right[j]) {
                     nums[k] = left[i++];
-                } else if (j < right.length){
+                } else if (j < right.length) {
                     nums[k] = right[j++];
                 } else if (i < left.length) {
                     nums[k] = left[i++];

@@ -37,7 +37,7 @@ public class LHS {
             if (currKey - previousKey == 1) {
                 max = Math.max(max, currVal + previousVal);
             }
-            if (currVal != -1){
+            if (currVal != -1) {
                 previousVal = currVal;
                 previousKey = currKey;
             }

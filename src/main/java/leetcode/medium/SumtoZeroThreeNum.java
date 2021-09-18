@@ -15,7 +15,7 @@ public class SumtoZeroThreeNum {
         int size = nums.length, target;
         for (int k = 0; nums[k] <= 0; k++) {
             target = nums[k] * -1;
-            for (int i = k + 1, j = size - 1; i < size && j > i;) {
+            for (int i = k + 1, j = size - 1; i < size && j > i; ) {
                 if (target == nums[i] + nums[j]) {
                     result.add(Arrays.asList(nums[k], nums[i], nums[j]));
                 }

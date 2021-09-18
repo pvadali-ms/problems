@@ -17,7 +17,7 @@ public class LevelOrderTraversal {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
         int size;
-        while(!queue.isEmpty() && queue.peek() != null) {
+        while (!queue.isEmpty() && queue.peek() != null) {
             size = queue.size();
             List<Integer> curr = new LinkedList<Integer>();
             for (int i = 0; i < size; i++) {

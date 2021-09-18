@@ -1,6 +1,5 @@
 package ooad.restaurantReservation;
 
-import javax.naming.spi.ResolveResult;
 import java.util.List;
 
 /**
@@ -21,7 +20,7 @@ public class ReservationManagementSystem {
     }
 
     boolean deleteReservation(Reservation reservation) {
-        return  false;
+        return false;
     }
 
 }

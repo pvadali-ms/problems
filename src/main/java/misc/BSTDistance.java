@@ -51,7 +51,7 @@ public class BSTDistance {
         tempMax = Integer.MIN_VALUE;
 
         int fromAtoMax = 0;
-        for(int i = ancestor + 1; i < maxPos; i++) {
+        for (int i = ancestor + 1; i < maxPos; i++) {
             if (arr[i] > arr[ancestor]) {
                 if (max > arr[i] && arr[i] > tempMax) {
                     tempMax = arr[i];

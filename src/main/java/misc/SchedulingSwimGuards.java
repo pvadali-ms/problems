@@ -8,12 +8,12 @@ import java.util.List;
 public class SchedulingSwimGuards {
 
 
-    public int getTotalShiftLongMethod (List<SwimInterval> swimIntervals) {
+    public int getTotalShiftLongMethod(List<SwimInterval> swimIntervals) {
         int sum = 0;
         Collections.sort(swimIntervals, new Comparator<SwimInterval>() {
             @Override
             public int compare(SwimInterval o1, SwimInterval o2) {
-                return ((Integer)o1.getBegin()).compareTo((Integer)o2.getBegin());
+                return ((Integer) o1.getBegin()).compareTo((Integer) o2.getBegin());
             }
         });
         for (int i = 0; i < swimIntervals.size() - 1; i++) {
@@ -77,7 +77,7 @@ public class SchedulingSwimGuards {
             while (nextInterval != null && nextInterval.getEnd() <= currentInterval.getEnd()) {
                 i++;
                 nextInterval = i == swimIntervalSize - 1 ? null : swimIntervals.get(i + 1);
-            System.out.println(sum);
+                System.out.println(sum);
             }
             if (nextInterval != null && currentInterval.getEnd() > nextInterval.getBegin()) {
                 sum -= currentInterval.getEnd() - nextInterval.getBegin();

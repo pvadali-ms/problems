@@ -5,14 +5,14 @@ import java.util.List;
 /**
  * Created by PV029500 on 11/26/2016.
  * Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
-
- For example:
-
- Given the array [-2,1,-3,4,-1,2,1,-5,4],
-
- the contiguous subarray [4,-1,2,1] has the largest sum = 6.
-
- For this problem, return the maximum sum.
+ * <p>
+ * For example:
+ * <p>
+ * Given the array [-2,1,-3,4,-1,2,1,-5,4],
+ * <p>
+ * the contiguous subarray [4,-1,2,1] has the largest sum = 6.
+ * <p>
+ * For this problem, return the maximum sum.
  */
 
 public class MaxSumContiguousSubArray {

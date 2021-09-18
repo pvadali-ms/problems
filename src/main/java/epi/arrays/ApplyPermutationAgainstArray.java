@@ -1,4 +1,4 @@
-package main.java.epi.arrays;
+package epi.arrays;
 
 /**
  * Created by PV029500 on 1/13/2017.
@@ -20,7 +20,7 @@ public class ApplyPermutationAgainstArray {
 
         for (int i = 0; i < arr.length; i++) {
             int next = i;
-            while(permutation[next] >= 0) {
+            while (permutation[next] >= 0) {
                 SwapNumbersArray.swap(arr, i, permutation[next]);
                 int temp = permutation[next];
                 permutation[next] -= permutation.length;

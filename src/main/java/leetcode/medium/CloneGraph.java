@@ -24,7 +24,7 @@ public class CloneGraph {
     }
 
     public void runDFS(UndirectedGraphNode node, UndirectedGraphNode newNode, Map<UndirectedGraphNode, UndirectedGraphNode> visitedMap) {
-        for(UndirectedGraphNode neighborNode : node.neighbors) {
+        for (UndirectedGraphNode neighborNode : node.neighbors) {
             if (visitedMap.containsKey(neighborNode)) {
                 newNode.neighbors.add(visitedMap.get(neighborNode));
             } else {

@@ -1,4 +1,4 @@
-package main.java.epi.arrays;
+package epi.arrays;
 
 /**
  * Created by PV029500 on 1/12/2017.
@@ -16,13 +16,13 @@ public class BuyAndSellStockTwoTransactions {
         int[] forward = new int[prices.length];
         int min = Integer.MAX_VALUE, maxProfit = 0, max = Integer.MIN_VALUE;
 
-        for(int i = 0; i < prices.length; i++) {
+        for (int i = 0; i < prices.length; i++) {
             min = Math.min(min, prices[i]);
             maxProfit = Math.max(maxProfit, prices[i] - min);
             forward[i] = maxProfit;
         }
 
-        for(int i = prices.length - 1; i >= 0; i--) {
+        for (int i = prices.length - 1; i >= 0; i--) {
             max = Math.max(max, prices[i]);
             maxProfit = Math.max(maxProfit, max - prices[i] + forward[i]);
         }

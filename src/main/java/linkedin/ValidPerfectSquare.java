@@ -3,17 +3,17 @@ package linkedin;
 /**
  * Created by PV029500 on 11/26/2016.
  * Given a positive integer num, write a function which returns True if num is a perfect square else False.
-
- Note: Do not use any built-in library function such as sqrt.
-
- Example 1:
-
- Input: 16
- Returns: True
- Example 2:
-
- Input: 14
- Returns: False
+ * <p>
+ * Note: Do not use any built-in library function such as sqrt.
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: 16
+ * Returns: True
+ * Example 2:
+ * <p>
+ * Input: 14
+ * Returns: False
  */
 public class ValidPerfectSquare {
 
@@ -32,7 +32,7 @@ public class ValidPerfectSquare {
             long mid = (low + high) >> 1;
             if (mid * mid == num) return true;
             if (mid * mid > num) {
-                low = (int)mid + 1;
+                low = (int) mid + 1;
             } else {
                 high = (int) mid - 1;
             }

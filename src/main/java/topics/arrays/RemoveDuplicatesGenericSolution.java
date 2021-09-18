@@ -21,11 +21,10 @@ public class RemoveDuplicatesGenericSolution {
         int i = 1, j = 1;
         int cnt = 1;
         while (j < n) {
-            if (A[j] != A[j-1]) {
+            if (A[j] != A[j - 1]) {
                 cnt = 1;
                 A[i++] = A[j];
-            }
-            else {
+            } else {
                 if (cnt < k) {
                     A[i++] = A[j];
                     cnt++;

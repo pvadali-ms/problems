@@ -5,10 +5,16 @@ package leetcode.hard;
  */
 public class FirstMissingPositive {
 
+    public static void swap(int[] nums, int i, int j) {
+        nums[i] = nums[i] ^ nums[j];
+        nums[j] = nums[i] ^ nums[j];
+        nums[i] = nums[i] ^ nums[j];
+    }
+
     public int firstMissingPositive(int[] nums) {
         int i = 0;
         while (i < nums.length) {
-            if(nums[i] == i + 1 || nums[i] <= 0 || nums[i] > nums.length) {
+            if (nums[i] == i + 1 || nums[i] <= 0 || nums[i] > nums.length) {
                 i++;
             } else if (nums[nums[i] - 1] != nums[i]) {
                 swap(nums, i, nums[i] - 1);
@@ -17,7 +23,7 @@ public class FirstMissingPositive {
             }
         }
 
-        for(i = 0; i < nums.length; i++) {
+        for (i = 0; i < nums.length; i++) {
 
             if (nums[i] != i + 1) {
                 return i + 1;
@@ -25,12 +31,6 @@ public class FirstMissingPositive {
         }
 
         return i + 1;
-    }
-
-    public static void swap(int[] nums, int i, int j) {
-        nums[i] = nums[i] ^ nums[j];
-        nums[j] = nums[i] ^ nums[j];
-        nums[i] = nums[i] ^ nums[j];
     }
 
 

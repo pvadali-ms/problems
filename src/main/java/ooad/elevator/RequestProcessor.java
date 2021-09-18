@@ -24,7 +24,7 @@ public class RequestProcessor extends Thread {
     }
 
     @Override
-    public void run(){
+    public void run() {
         try {
             startElevator(request);
         } catch (InterruptedException e) {

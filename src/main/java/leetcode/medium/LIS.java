@@ -12,7 +12,7 @@ public class LIS {
         Integer floorKey, ceilingKey;
 
         TreeMap<Integer, Integer> m = new TreeMap<Integer, Integer>();
-        for(int i : nums) {
+        for (int i : nums) {
             if (!m.containsKey(i)) {
                 floorKey = m.floorKey(i);
                 ceilingKey = m.ceilingKey(i);

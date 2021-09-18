@@ -2,7 +2,6 @@ package ooad.elevator;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -14,6 +13,13 @@ public class ElevatorManagementSystem {
 
     List<Car> cars = new ArrayList<Car>();
     Queue<Request> requests = new LinkedList<Request>();
+
+    public static void main(String[] args) {
+        ElevatorManagementSystem elevatorManagementSystem = new ElevatorManagementSystem();
+        while (elevatorManagementSystem.requests.size() > 0) {
+            elevatorManagementSystem.callElevator(new Floor(), new Floor());
+        }
+    }
 
     public void callElevator(Floor source, Floor destination) {
         Request request = new Request(source, destination, false, new Timestamp(System.currentTimeMillis()));
@@ -31,13 +37,6 @@ public class ElevatorManagementSystem {
             }
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        ElevatorManagementSystem elevatorManagementSystem = new ElevatorManagementSystem();
-        while (elevatorManagementSystem.requests.size() > 0) {
-            elevatorManagementSystem.callElevator(new Floor(), new Floor());
-        }
     }
 
 }

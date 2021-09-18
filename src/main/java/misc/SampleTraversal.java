@@ -11,33 +11,33 @@ import java.util.*;
 /**
  * Sample Input:
  * 1114/1112/1121/1111
- 1115/1112/1121/1111
- 1116/1113/1111
- 1118/1120/1121/1111
- 1119/1120/1121/1111
- 1301/1300/1113/1111
- 1302/1300/1113/1111
- *
+ * 1115/1112/1121/1111
+ * 1116/1113/1111
+ * 1118/1120/1121/1111
+ * 1119/1120/1121/1111
+ * 1301/1300/1113/1111
+ * 1302/1300/1113/1111
+ * <p>
  * Sample Output:
  * {name: '1111', msGroup: true}
- {name: '1121', msGroup: true}
- {name: '1112', msGroup: true}
- {name: '1114', selected: false}
- {name: '1115', selected: false}
- {msGroup: false}
- {name: '1120', msGroup: true}
- {name: '1118', selected: false}
- {name: '1119', selected: false}
- {msGroup: false}
- {msGroup: false}
- {name: '1113', msGroup: true}
- {name: '1116', selected: false}
- {name: '1300', msGroup: true}
- {name: '1301', selected: false}
- {name: '1302', selected: false}
- {msGroup: false}
- {msGroup: false}
- {msGroup: false}
+ * {name: '1121', msGroup: true}
+ * {name: '1112', msGroup: true}
+ * {name: '1114', selected: false}
+ * {name: '1115', selected: false}
+ * {msGroup: false}
+ * {name: '1120', msGroup: true}
+ * {name: '1118', selected: false}
+ * {name: '1119', selected: false}
+ * {msGroup: false}
+ * {msGroup: false}
+ * {name: '1113', msGroup: true}
+ * {name: '1116', selected: false}
+ * {name: '1300', msGroup: true}
+ * {name: '1301', selected: false}
+ * {name: '1302', selected: false}
+ * {msGroup: false}
+ * {msGroup: false}
+ * {msGroup: false}
  */
 public class SampleTraversal {
 
@@ -45,7 +45,7 @@ public class SampleTraversal {
     public static Set<nAryTree> visitedSet = new HashSet<nAryTree>();
     public static List<String> resultList = new ArrayList<String>();
 
-    public void readInput() throws Exception{
+    public void readInput() throws Exception {
         String path = "..\\SampleTraversalInput";
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream(path)));
         String line;
@@ -83,7 +83,7 @@ public class SampleTraversal {
 
 
     public void traverseAndPrintTree(nAryTree node) {
-        for(nAryTree child : node.children) {
+        for (nAryTree child : node.children) {
             dfs(child);
         }
         for (String s : resultList) {
@@ -93,9 +93,9 @@ public class SampleTraversal {
 
     public void dfs(nAryTree curr) {
         if (!visitedSet.contains(curr))
-            resultList.add("{\"name\": \"" + curr.data + "\", "  + (curr.children.size() > 0 ? "\"msGroup\": \"true\"}" : "\"selected\": \"false\"}"));
+            resultList.add("{\"name\": \"" + curr.data + "\", " + (curr.children.size() > 0 ? "\"msGroup\": \"true\"}" : "\"selected\": \"false\"}"));
         visitedSet.add(curr);
-        for(nAryTree child : curr.children) {
+        for (nAryTree child : curr.children) {
             dfs(child);
         }
         if (curr.children.size() > 0)

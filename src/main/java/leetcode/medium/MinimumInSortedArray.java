@@ -9,7 +9,7 @@ public class MinimumInSortedArray {
         return min(nums, 0, nums.length - 1);
     }
 
-    public int min(int[]nums, int low, int high) {
+    public int min(int[] nums, int low, int high) {
         if (low <= high) {
             if (nums[low] <= nums[high]) {
                 return nums[low];

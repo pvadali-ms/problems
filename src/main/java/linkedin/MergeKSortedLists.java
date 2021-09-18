@@ -15,9 +15,9 @@ public class MergeKSortedLists {
 
         PriorityQueue<ListNode> priorityQueue = new PriorityQueue<ListNode>(lists.length, new Comparator<ListNode>() {
             public int compare(ListNode o1, ListNode o2) {
-                if (o1.val<o2.val)
+                if (o1.val < o2.val)
                     return -1;
-                else if (o1.val==o2.val)
+                else if (o1.val == o2.val)
                     return 0;
                 else
                     return 1;
@@ -43,15 +43,15 @@ public class MergeKSortedLists {
         return dummy.next;
     }
 
-//recursive
-public ListNode mergeKListsRecurse(ListNode[] lists) {
+    //recursive
+    public ListNode mergeKListsRecurse(ListNode[] lists) {
 
-    if (lists.length==0) return null;
-    if (lists.length==1) return lists[0];
-    if (lists.length==2) return mergeTwoLists(lists[0], lists[1]);
-    return mergeTwoLists(mergeKListsRecurse(Arrays.copyOfRange(lists, 0, lists.length/2)),
-            mergeKListsRecurse(Arrays.copyOfRange(lists, lists.length/2, lists.length)));
-}
+        if (lists.length == 0) return null;
+        if (lists.length == 1) return lists[0];
+        if (lists.length == 2) return mergeTwoLists(lists[0], lists[1]);
+        return mergeTwoLists(mergeKListsRecurse(Arrays.copyOfRange(lists, 0, lists.length / 2)),
+                mergeKListsRecurse(Arrays.copyOfRange(lists, lists.length / 2, lists.length)));
+    }
 
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {

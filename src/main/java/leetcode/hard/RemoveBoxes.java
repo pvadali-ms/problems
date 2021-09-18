@@ -17,13 +17,13 @@ class RemoveBoxes {
     }
 
     private int removeBoxes(int[] boxes, int currSum) {
-        if(boxes.length == 0) {
+        if (boxes.length == 0) {
             max = Math.max(currSum, max);
         }
-        for (int i = 0; i < boxes.length;) {
+        for (int i = 0; i < boxes.length; ) {
             int begin = i;
             int count = 1;
-            while(i + 1 < boxes.length && boxes[i] == boxes[i + 1]) {
+            while (i + 1 < boxes.length && boxes[i] == boxes[i + 1]) {
                 i++;
                 count++;
             }

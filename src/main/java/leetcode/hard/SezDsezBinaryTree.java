@@ -16,9 +16,9 @@ public class SezDsezBinaryTree {
         StringBuilder data = new StringBuilder();
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(node);
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             TreeNode temp = queue.poll();
-            if(temp == null) {
+            if (temp == null) {
                 data.append(delimiter).append("null");
                 continue;
             }
@@ -31,13 +31,13 @@ public class SezDsezBinaryTree {
     }
 
     public TreeNode deSerialize(String data) {
-        if(data == null || data.length() == 0 || data.equals("null")) return null;
+        if (data == null || data.length() == 0 || data.equals("null")) return null;
         String[] arr = data.split(",");
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         TreeNode root = new TreeNode(Integer.valueOf(arr[0]));
         queue.add(root);
         int i = 1;
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             if (queue.poll() == null) continue;
             TreeNode temp = queue.poll();
             if (arr[i].equals("null")) {
@@ -48,7 +48,7 @@ public class SezDsezBinaryTree {
                 queue.add(temp.left);
             }
             i++;
-            if(arr[i].equals("null")) {
+            if (arr[i].equals("null")) {
                 temp.right = null;
                 queue.add(null);
             } else {

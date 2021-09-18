@@ -8,16 +8,16 @@ import java.util.List;
 /**
  * Created by PV029500 on 11/26/2016.
  * Given a binary tree, collect a tree's nodes as if you were doing this: Collect and remove all leaves, repeat until the tree is empty.
-
- Example:
- Given binary tree
-
- 1
- / \
- 2   3
- / \
- 4   5
- Returns [4, 5, 3], [2], [1].
+ * <p>
+ * Example:
+ * Given binary tree
+ * <p>
+ * 1
+ * / \
+ * 2   3
+ * / \
+ * 4   5
+ * Returns [4, 5, 3], [2], [1].
  */
 public class FindLeavesofBinaryTree {
     //taken from http://www.programcreek.com/2014/07/leetcode-find-leaves-of-binary-tree-java/
@@ -30,17 +30,17 @@ public class FindLeavesofBinaryTree {
     }
 
     // traverse the tree bottom-up recursively
-    private int helper(List<List<Integer>> list, TreeNode root){
-        if(root==null)
+    private int helper(List<List<Integer>> list, TreeNode root) {
+        if (root == null)
             return -1;
 
         int left = helper(list, root.left);
         int right = helper(list, root.right);
-        int curr = Math.max(left, right)+1;
+        int curr = Math.max(left, right) + 1;
 
         // the first time this code is reached is when curr==0,
         //since the tree is bottom-up processed.
-        if(list.size()<=curr){
+        if (list.size() <= curr) {
             list.add(new ArrayList<Integer>());
         }
 

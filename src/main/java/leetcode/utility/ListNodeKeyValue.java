@@ -7,6 +7,7 @@ public class ListNodeKeyValue {
     public int key;
     public int value;
     public ListNodeKeyValue next;
+
     public ListNodeKeyValue(int key, int value) {
         this.key = key;
         this.value = value;

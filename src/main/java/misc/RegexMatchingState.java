@@ -9,37 +9,6 @@ import java.util.Map;
  * Created by PV029500 on 4/14/2017.
  */
 public class RegexMatchingState {
-    class State {
-        boolean end;
-        Map<Character, List<State>> transferTable;
-
-        State() {
-            transferTable = new HashMap<Character, List<State>>();
-        }
-
-        void addTransfer(char c, State next) {
-            if (transferTable.containsKey(c)) {
-                transferTable.get(c).add(next);
-            } else {
-                List<State> nexts = new ArrayList<State>();
-                nexts.add(next);
-                transferTable.put(c, nexts);
-            }
-        }
-
-        List<State> getNext(char c) {
-            return transferTable.get(c);
-        }
-
-        void setEnd() {
-            end = true;
-        }
-
-        boolean isEnd() {
-            return end;
-        }
-    }
-
     State compile(String pattern) {
         State root = new State();
         State cur = root;
@@ -90,5 +59,36 @@ public class RegexMatchingState {
 
     public boolean isMatch(String s, String p) {
         return isMatch(s, 0, compile(p));
+    }
+
+    class State {
+        boolean end;
+        Map<Character, List<State>> transferTable;
+
+        State() {
+            transferTable = new HashMap<Character, List<State>>();
+        }
+
+        void addTransfer(char c, State next) {
+            if (transferTable.containsKey(c)) {
+                transferTable.get(c).add(next);
+            } else {
+                List<State> nexts = new ArrayList<State>();
+                nexts.add(next);
+                transferTable.put(c, nexts);
+            }
+        }
+
+        List<State> getNext(char c) {
+            return transferTable.get(c);
+        }
+
+        void setEnd() {
+            end = true;
+        }
+
+        boolean isEnd() {
+            return end;
+        }
     }
 }

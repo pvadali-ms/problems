@@ -23,7 +23,7 @@ public class TreeFromPreAndInOrders {
 
     public TreeNode helper(int preStart, int inStart, int inEnd, int[] preOrder, int[] inOrder, Map<Integer, Integer> m) {
 
-        if(preStart > preOrder.length - 1 || inStart > inEnd) {
+        if (preStart > preOrder.length - 1 || inStart > inEnd) {
             return null;
         }
         TreeNode root = new TreeNode(preOrder[preStart]);
