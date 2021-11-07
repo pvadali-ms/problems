@@ -9,7 +9,5 @@ public class PowerOfTwoNumTest {
 
     @Test
     public void powerOfTwoTest() {
-        PowerOfTwoNum powerOfTwoNum = new PowerOfTwoNum();
-        System.out.println(powerOfTwoNum.powerOfTwoNum(2, 6));
     }
 }
